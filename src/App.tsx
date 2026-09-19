@@ -157,20 +157,42 @@ export default function Home() {
                   <span>{project.status}</span>
                 </div>
                 <div className="project-visual" aria-hidden="true">
-                  <div className="visual-frame">
-                    <Icon size={42} strokeWidth={1.35} />
-                    {project.title === "Robin" && (
-                      <div className="waveform">
-                        {[18, 34, 48, 27, 58, 39, 22, 45, 31].map((height, index) => (
+                  {project.title === "Robin" ? (
+                    <div className="robin-interface">
+                      <div className="robin-titlebar">
+                        <span className="robin-status-dot" />
+                        <span>ROBIN / ONLINE</span>
+                        <span>01:42</span>
+                      </div>
+                      <div className="robin-listening">
+                        <span className="robin-mic"><Mic2 size={19} strokeWidth={1.6} /></span>
+                        <div>
+                          <small>Listening...</small>
+                          <strong>“Robin, switch audio.”</strong>
+                        </div>
+                      </div>
+                      <div className="robin-waveform">
+                        {[14, 27, 42, 23, 52, 34, 19, 39, 25, 46, 30, 17].map((height, index) => (
                           <i key={index} style={{ height }} />
                         ))}
                       </div>
-                    )}
-                    {project.title === "3D Studies" && <div className="render-grid" />}
-                    {project.title === "Game Development" && (
-                      <Sparkles className="spark-icon" size={22} />
-                    )}
-                  </div>
+                      <div className="robin-response">
+                        <Sparkles size={15} />
+                        <p>Switched audio to <strong>ROBIN&apos;S EARPHONES</strong></p>
+                      </div>
+                      <div className="robin-modules">
+                        <span>Spotify</span><span>Apps</span><span>Memory</span>
+                      </div>
+                    </div>
+                  ) : (
+                    <div className="visual-frame">
+                      <Icon size={42} strokeWidth={1.35} />
+                      {project.title === "3D Studies" && <div className="render-grid" />}
+                      {project.title === "Game Development" && (
+                        <Sparkles className="spark-icon" size={22} />
+                      )}
+                    </div>
+                  )}
                 </div>
                 <div className="project-copy">
                   <p className="project-subtitle">{project.subtitle}</p>
@@ -181,6 +203,9 @@ export default function Home() {
                       <li key={tag}>{tag}</li>
                     ))}
                   </ul>
+                  {project.title === "Robin" && (
+                    <p className="project-repo-note"><span /> Public repository in progress</p>
+                  )}
                 </div>
               </article>
             );
