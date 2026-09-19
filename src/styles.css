@@ -142,18 +142,20 @@ footer > a:last-child { justify-self: end; }
   .site-header { grid-template-columns: 1fr auto; height: 5rem; }
   .site-header .wordmark { padding-right: 0.12em; letter-spacing: -0.03em; }
   .site-header nav { display: none; }
-  .hero { gap: 2.5rem; padding: 9.5rem 0 5rem; }
+  .hero { padding: 9.5rem 0 5rem; }
   .hero h1 { font-size: clamp(3.25rem, 15vw, 5.2rem); }
   .hero-intro { max-width: 95%; }
   .hero-actions { align-items: flex-start; flex-direction: column; }
   .hero-mark {
-    position: relative;
-    right: auto;
+    position: absolute;
+    top: 9.25rem;
+    right: 0;
     bottom: auto;
-    justify-self: center;
-    width: min(17rem, 78vw);
-    margin: 0 auto 2rem;
-    opacity: 0.72;
+    left: 0;
+    width: min(23rem, 100%);
+    margin: 0 auto;
+    opacity: 0.22;
+    pointer-events: none;
   }
   .section-shell { padding: 6rem 0; }
   .section-heading { align-items: flex-start; flex-direction: column; gap: 2rem; }
