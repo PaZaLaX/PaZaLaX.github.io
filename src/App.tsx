@@ -12,12 +12,12 @@ const projects = [
   {
     number: "01",
     title: "Robin",
-    subtitle: "Personal voice assistant",
+    subtitle: "Windows system-tray assistant",
     description:
-      "A modular Windows voice assistant built in Python, with natural voice commands, Spotify control, app launching, persistent memory, and audio-device switching.",
-    tags: ["Python", "Spotify API", "Speech recognition"],
+      "A modular Python voice assistant with natural commands, OpenAI answers, Spotify control, app launching, persistent memory, and audio-device switching.",
+    tags: ["Python", "OpenAI API", "Spotify API", "Windows automation"],
     icon: Mic2,
-    status: "Active project",
+    status: "Open source",
     className: "project-robin",
   },
   {
@@ -204,7 +204,15 @@ export default function Home() {
                     ))}
                   </ul>
                   {project.title === "Robin" && (
-                    <p className="project-repo-note"><span /> Public repository in progress</p>
+                    <a
+                      className="project-repo-note"
+                      href="https://github.com/PaZaLaX/Robin-Voice-Assistant"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      View source on GitHub
+                      <ArrowUpRight size={14} aria-hidden="true" />
+                    </a>
                   )}
                 </div>
               </article>
