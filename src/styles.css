@@ -148,12 +148,13 @@ footer > a:last-child { justify-self: end; }
   .hero-actions { align-items: flex-start; flex-direction: column; }
   .hero-mark {
     position: absolute;
-    top: 9.25rem;
-    right: 0;
+    top: 10.5rem;
+    right: auto;
     bottom: auto;
-    left: 0;
+    left: 50%;
     width: min(23rem, 100%);
-    margin: 0 auto;
+    margin: 0;
+    translate: calc(-50% + 1.25rem) 0;
     opacity: 0.22;
     pointer-events: none;
   }
