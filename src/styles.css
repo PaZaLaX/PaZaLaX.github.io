@@ -229,6 +229,49 @@ footer > a:last-child { justify-self: end; }
 .placeholder-orbit { position: relative; display: grid; place-items: center; width: min(100%, 27rem); aspect-ratio: 1; margin-left: auto; border: 1px solid rgba(169, 201, 236, 0.22); border-radius: 50%; color: var(--accent); background: radial-gradient(circle, rgba(91, 147, 208, 0.13), transparent 62%); }
 .placeholder-orbit::after { position: absolute; inset: 12%; border: 1px dashed var(--border); border-radius: inherit; content: ""; transform: rotate(18deg) scaleY(0.62); }
 
+/* 3D studies */
+.studies-page { --accent: #f0ad72; background: radial-gradient(circle at 86% 4%, rgba(191, 108, 49, 0.12), transparent 28rem), var(--background); }
+.studies-hero {
+  position: relative; display: grid; grid-template-columns: 0.78fr 1.22fr; align-items: center; gap: clamp(2.5rem, 6vw, 6rem);
+  width: min(100% - 3rem, 1280px); min-height: 100svh; margin: 0 auto; padding: 9rem 0 6.5rem;
+}
+.studies-hero-copy { position: relative; z-index: 2; }
+.studies-hero h1 { margin: 0; font-size: clamp(4.5rem, 8.5vw, 8rem); font-weight: 500; letter-spacing: -0.075em; line-height: 0.86; }
+.studies-hero .project-lede { font-size: clamp(1rem, 1.5vw, 1.2rem); }
+.study-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 2rem; }
+.study-tags span { padding: 0.42rem 0.72rem; border: 1px solid var(--border); border-radius: 999px; color: #b7a18e; font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; }
+.studies-hero-image { position: relative; margin: 0; overflow: hidden; border: 1px solid var(--border); border-radius: 1.4rem; background: #101216; box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.34); }
+.studies-hero-image::after { position: absolute; inset: 0; border-radius: inherit; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04); content: ""; pointer-events: none; }
+.studies-hero-image img { display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
+.studies-hero-image figcaption { display: flex; justify-content: space-between; padding: 1rem 1.2rem; border-top: 1px solid var(--border); color: #8f959d; font-size: 0.68rem; letter-spacing: 0.11em; text-transform: uppercase; }
+.studies-hero-image figcaption span { color: var(--accent); }
+
+.study-entry { border-bottom: 1px solid var(--border); }
+.study-entry-heading { display: grid; grid-template-columns: 0.6fr 1.25fr 0.8fr; align-items: end; gap: 3rem; margin-bottom: 3.5rem; }
+.study-entry-heading h2, .studies-outro h2 { margin: 0; font-size: clamp(2.7rem, 5vw, 5.2rem); font-weight: 500; letter-spacing: -0.055em; line-height: 0.98; }
+.study-entry-heading > p { margin: 0; color: #929ba7; font-size: 0.94rem; line-height: 1.75; }
+.study-overline { margin: 0 0 0.7rem; color: var(--accent); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; }
+.study-pair { display: grid; grid-template-columns: 1.55fr 0.75fr; align-items: stretch; gap: 1.25rem; }
+.study-pair figure { display: grid; grid-template-rows: 1fr auto; margin: 0; overflow: hidden; border: 1px solid var(--border); border-radius: 1.2rem; background: #0e1116; }
+.study-image-wrap { min-height: 0; overflow: hidden; background: #111319; }
+.study-image-wrap img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform 600ms cubic-bezier(0.22, 1, 0.36, 1); }
+.study-pair figure:hover .study-image-wrap img { transform: scale(1.015); }
+.study-render .study-image-wrap { aspect-ratio: 16 / 10; }
+.study-mesh .study-image-wrap { aspect-ratio: 4 / 5; }
+.study-mesh .study-image-wrap img { object-position: center; }
+.study-pair figcaption { display: grid; grid-template-columns: 0.4fr 1fr; gap: 1.2rem; padding: 1.35rem; border-top: 1px solid var(--border); }
+.study-pair figcaption span { color: var(--accent); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+.study-pair figcaption p { margin: 0; color: #858f9c; font-size: 0.82rem; line-height: 1.65; }
+.study-entry-second { padding-top: 9.5rem; }
+.study-entry-second .study-pair { grid-template-columns: 0.75fr 1.55fr; }
+.study-entry-second .study-render { grid-column: 2; grid-row: 1; }
+.study-entry-second .study-mesh { grid-column: 1; grid-row: 1; }
+.studies-outro { display: grid; grid-template-columns: auto 1fr; align-items: start; gap: 2rem; }
+.studies-outro > svg { margin-top: 0.5rem; color: var(--accent); }
+.studies-outro .eyebrow { margin-bottom: 0.75rem; }
+.studies-outro h2 { font-size: clamp(2.5rem, 5vw, 4.8rem); }
+.studies-outro div > p:last-child { max-width: 45rem; margin: 1.5rem 0 0; color: #929ba7; line-height: 1.8; }
+
 .fade-up { animation: fade-up 720ms both cubic-bezier(0.22, 1, 0.36, 1); }
 .delay-1 { animation-delay: 90ms; }
 .delay-2 { animation-delay: 180ms; }
@@ -251,6 +294,12 @@ footer > a:last-child { justify-self: end; }
   .gallery-image { min-height: 24rem; }
   .placeholder-hero { grid-template-columns: 1fr; }
   .placeholder-orbit { position: absolute; right: -5rem; width: 23rem; opacity: 0.3; }
+  .studies-hero { grid-template-columns: 1fr; padding-top: 11rem; }
+  .studies-hero-image { width: 88%; margin-left: auto; }
+  .study-entry-heading { grid-template-columns: 0.45fr 1.15fr; }
+  .study-entry-heading > p { grid-column: 2; }
+  .study-pair, .study-entry-second .study-pair { grid-template-columns: 1fr 1fr; }
+  .study-entry-second .study-render { grid-column: 2; }
 }
 
 @media (max-width: 680px) {
@@ -304,6 +353,20 @@ footer > a:last-child { justify-self: end; }
   .project-cta { grid-template-columns: auto 1fr; }
   .project-cta .primary-button { grid-column: 1 / -1; justify-content: center; }
   .placeholder-orbit { right: -9rem; width: 20rem; }
+  .studies-hero { width: min(100% - 2rem, 1280px); padding: 8rem 0 5rem; }
+  .studies-hero h1 { font-size: clamp(4.25rem, 20vw, 6rem); }
+  .studies-hero-image { width: 100%; }
+  .studies-hero .project-hero-index { display: flex; }
+  .study-entry-heading { grid-template-columns: 1fr; gap: 1.5rem; margin-bottom: 2.5rem; }
+  .study-entry-heading > p { grid-column: 1; }
+  .study-pair, .study-entry-second .study-pair { grid-template-columns: 1fr; }
+  .study-entry-second .study-render, .study-entry-second .study-mesh { grid-column: 1; }
+  .study-entry-second .study-render { grid-row: 1; }
+  .study-entry-second .study-mesh { grid-row: 2; }
+  .study-mesh .study-image-wrap { aspect-ratio: 16 / 10; }
+  .study-pair figcaption { grid-template-columns: 1fr; gap: 0.45rem; }
+  .study-entry-second { padding-top: 6rem; }
+  .studies-outro { gap: 1.2rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {

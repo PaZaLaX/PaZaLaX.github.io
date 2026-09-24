@@ -229,6 +229,66 @@ function RobinPage() {
   );
 }
 
+function StudiesPage() {
+  return (
+    <main className="project-page studies-page">
+      <Header />
+      <section className="studies-hero" id="top">
+        <div className="studies-hero-copy">
+          <a className="back-link" href="/#top"><ArrowLeft size={15} /> Portfolio</a>
+          <p className="eyebrow">02 / 3D studies</p>
+          <h1>Learning<br />in layers.</h1>
+          <p className="project-lede">Two Blender still-life renders exploring modelling, materials, lighting, and how small changes can reshape a scene.</p>
+          <div className="study-tags" aria-label="Tools and focus areas"><span>Blender</span><span>Modelling</span><span>Materials</span><span>Lighting</span></div>
+        </div>
+        <figure className="studies-hero-image">
+          <img src="/images/donut-study-02-render.jpg" alt="Blender render of four chocolate-glazed donuts arranged on a plate beside a wooden coffee mug" />
+          <figcaption><span>02</span> Donut study / final variation</figcaption>
+        </figure>
+        <div className="project-hero-index"><span>Blender studies</span><span>Render / mesh / iteration</span></div>
+      </section>
+
+      <section className="project-intro section-shell">
+        <div className="section-kicker"><span>01</span><p>The study</p></div>
+        <div className="project-intro-copy">
+          <h2>One scene, pushed through two directions.</h2>
+          <div><p>I began with a quiet breakfast still life: one pink-glazed donut, a plate, and a wooden mug of coffee.</p><p>For the second version, I kept the same visual foundation but changed the icing, multiplied the donuts, and built a taller, more energetic arrangement.</p></div>
+        </div>
+      </section>
+
+      <section className="study-entry section-shell" aria-labelledby="study-one-title">
+        <div className="study-entry-heading">
+          <div className="section-kicker"><span>02</span><p>First render</p></div>
+          <div><p className="study-overline">Pink glaze / still life</p><h2 id="study-one-title">Building the foundation.</h2></div>
+          <p>The first pass focuses on a simple, readable composition. A soft pink glaze and colourful sprinkles pull attention toward the donut, while the plate, coffee, and textured surface give it a believable setting.</p>
+        </div>
+        <div className="study-pair">
+          <figure className="study-render"><div className="study-image-wrap"><img src="/images/donut-study-01-render.jpg" alt="First Blender render showing a pink-glazed sprinkled donut on a ceramic plate beside a wooden coffee mug" /></div><figcaption><span>Final render</span><p>A restrained first composition with warm highlights balanced against a cooler background.</p></figcaption></figure>
+          <figure className="study-mesh"><div className="study-image-wrap"><img src="/images/donut-study-01-mesh.png" alt="Blender mesh view of the first donut, plate, and mug scene" /></div><figcaption><span>Mesh view</span><p>The underlying forms: a dense donut and icing surface, supported by simpler plate and mug geometry.</p></figcaption></figure>
+        </div>
+      </section>
+
+      <section className="study-entry section-shell study-entry-second" aria-labelledby="study-two-title">
+        <div className="study-entry-heading">
+          <div className="section-kicker"><span>03</span><p>Second render</p></div>
+          <div><p className="study-overline">Chocolate variation / iteration</p><h2 id="study-two-title">More depth. More character.</h2></div>
+          <p>The second pass turns the same idea into a fuller scene. Chocolate icing creates stronger contrast, while the stacked donuts add height, overlap, and a clearer sense of abundance.</p>
+        </div>
+        <div className="study-pair study-pair-reverse">
+          <figure className="study-render"><div className="study-image-wrap"><img src="/images/donut-study-02-render.jpg" alt="Second Blender render showing four chocolate-glazed sprinkled donuts arranged on a ceramic plate beside a wooden coffee mug" /></div><figcaption><span>Final render</span><p>A bolder material choice and layered arrangement make the revised composition feel richer and more dimensional.</p></figcaption></figure>
+          <figure className="study-mesh"><div className="study-image-wrap"><img src="/images/donut-study-02-mesh.png" alt="Blender mesh view of the second stacked donut scene" /></div><figcaption><span>Mesh view</span><p>The expanded scene reveals how repeated forms were rotated, stacked, and overlapped to create movement.</p></figcaption></figure>
+        </div>
+      </section>
+
+      <section className="studies-outro section-shell">
+        <Box size={34} strokeWidth={1.35} />
+        <div><p className="eyebrow">Still learning</p><h2>Every render is a new experiment.</h2><p>These studies are part of an ongoing process: make something, notice what can improve, and build the next version with more intention.</p></div>
+      </section>
+      <Footer />
+    </main>
+  );
+}
+
 function PlaceholderProjectPage({ title, label, description, icon: Icon }: { title: string; label: string; description: string; icon: typeof Box }) {
   return (
     <main className="project-page placeholder-page">
@@ -251,7 +311,7 @@ function PlaceholderProjectPage({ title, label, description, icon: Icon }: { tit
 export default function App() {
   const path = window.location.pathname.replace(/\/+$/, "") || "/";
   if (path === "/work/robin") return <RobinPage />;
-  if (path === "/work/3d-studies") return <PlaceholderProjectPage title="3D Studies" label="Page ready for your next direction" description="A growing collection of Blender work focused on form, materials, lighting, and believable scenes." icon={Box} />;
+  if (path === "/work/3d-studies") return <StudiesPage />;
   if (path === "/work/game-development") return <PlaceholderProjectPage title="Game Development" label="Page ready for your next direction" description="The next chapter: learning the visual and technical foundations behind interactive worlds." icon={Braces} />;
   return <HomePage />;
 }
