@@ -312,6 +312,6 @@ export default function App() {
   const path = window.location.pathname.replace(/\/+$/, "") || "/";
   if (path === "/work/robin") return <RobinPage />;
   if (path === "/work/3d-studies") return <StudiesPage />;
-  if (path === "/work/game-development") return <PlaceholderProjectPage title="Game Development" label="Page ready for your next direction" description="The next chapter: learning the visual and technical foundations behind interactive worlds." icon={Braces} />;
+  if (path === "/work/game-development") return <PlaceholderProjectPage title="Game Development" label="Coming Soon" description="The next chapter: learning the visual and technical foundations behind interactive worlds." icon={Braces} />;
   return <HomePage />;
 }
